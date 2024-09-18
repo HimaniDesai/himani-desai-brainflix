@@ -68,10 +68,12 @@ a {
   }
 }
 .search-section-wrapper__input {
+  width: 12rem;
   font-family: avenir-next-regular;
   font-weight: 400;
   font-size: 13px;
   line-height: 18px;
+  justify-content: center;
   height: 2.25rem;
   padding-left: 2.2rem;
   background-image: url(/src/assets/icons/search.svg);
@@ -109,11 +111,12 @@ a {
   object-fit: cover;
 }
 .search-section__button {
-  font-family: avenir-next-bold;
+  font-family: avenir-next-regular;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 20px;
   height: 2.5rem;
+  line-height: 2.25rem;
   width: 100%;
   background-color: #0095FF;
   border: 0px;
@@ -130,11 +133,12 @@ a {
 }
 .search-section__button-tablet {
   display: none;
-  font-family: avenir-next-bold;
+  font-family: avenir-next-regular;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 20px;
   height: 2.25rem;
+  line-height: 2.25rem;
   width: 9rem;
   background-color: #0095FF;
   border: 0px;

@@ -45,9 +45,9 @@
     line-height: 22px;
 }
 @mixin labels-buttons-desktop{
-    font-family: $bold-text;
+    font-family: $regular-text;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 20px;
 }
 
@@ -76,9 +76,10 @@
     line-height: 18px;
 }
 @mixin labels-buttons-mobile{
-    font-family: $bold-text;
+    font-family: $regular-text;
     font-weight: 700;
-    font-size: 10px;
+    // font-size: 10px;
+    font-size: 14px;
     line-height: 20px;
 }
 

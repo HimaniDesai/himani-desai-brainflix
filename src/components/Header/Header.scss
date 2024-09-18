@@ -59,7 +59,9 @@ a{
 
         &__input {
             // width: 74vw;
+            width:12rem;
             @include body-copy-mobile;
+            justify-content: center;
             height: 2.25rem;
             padding-left: 2.2rem;
             background-image: url(/src/assets/icons/search.svg);
@@ -99,6 +101,7 @@ a{
     &__button {
         @include labels-buttons-mobile;
         height: 2.5rem;
+        line-height: 2.25rem;
         width: 100%;
         background-color: $brainflix-blue;
         border: 0px;
@@ -116,6 +119,7 @@ a{
             display: none;
             @include labels-buttons-desktop;
             height: 2.25rem;
+            line-height: 2.25rem;
             width: 9rem;
             background-color: $brainflix-blue;
             border: 0px;
