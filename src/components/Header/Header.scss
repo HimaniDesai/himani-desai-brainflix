@@ -1,0 +1,134 @@
+
+@use '../../../src/styles/partials/mixins' as *;
+@use '../../../src/styles/partials/typography' as *;
+@use '../../../src/styles/partials/variables' as *;
+
+a{
+    text-decoration: none;
+}
+.header {
+    padding: 1rem;
+    justify-content: flex-start;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem 1rem 2rem;
+    }
+
+    @include desktop {
+        padding: 1rem 8rem 1rem 8rem;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__logo {
+            padding-bottom: 1rem;
+
+            @include tablet {
+                display: block;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.search-section {
+
+    @include tablet {
+        display: flex;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            width: 60vw;
+            padding-bottom: 0;
+        }
+
+        @include desktop {
+            width: 36vw;
+        }
+
+        &__input {
+            // width: 74vw;
+            @include body-copy-mobile;
+            height: 2.25rem;
+            padding-left: 2.2rem;
+            background-image: url(/src/assets/icons/search.svg);
+            background-repeat: no-repeat;
+            background-position: 0.5rem 0.45rem;
+            background-color: $alabaster;
+            border-radius: .25rem;
+            border: solid $mercury .0625rem;
+
+            &::placeholder {
+                color: $brainflix-black;
+                justify-self: center;
+            }
+
+            &:focus {
+                outline: solid $brainflix-blue .0625rem;
+            }
+
+            @include tablet {
+                @include body-copy-desktop;
+                width: 30vw;
+            }
+
+            @include desktop {
+                width: 18vw;
+            }
+        }
+
+        &__user {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &__button {
+        @include labels-buttons-mobile;
+        height: 2.5rem;
+        width: 100%;
+        background-color: $brainflix-blue;
+        border: 0px;
+        border-radius: .25rem;
+        color: $white;
+        background-image: url(/src/assets/icons/upload.svg);
+        background-repeat: no-repeat;
+        background-position: 8px center;
+
+        @include tablet {
+            display: none;
+        }
+
+        &-tablet {
+            display: none;
+            @include labels-buttons-desktop;
+            height: 2.25rem;
+            width: 9rem;
+            background-color: $brainflix-blue;
+            border: 0px;
+            border-radius: .25rem;
+            color: $white;
+            background-image: url(/src/assets/icons/upload.svg);
+            background-repeat: no-repeat;
+            background-position: 8px center;
+
+            @include tablet {
+                display: block;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,21 @@
+@use 'typography' as *;
+
+// website fonts
+$regular-text: avenir-next-regular;
+$demi-text: avenir-next-demi;
+$bold-text: avenir-next-bold;
+
+// website colors
+$brainflix-black:#323232;
+$brainflix-darkblack:#000000;
+$brainflix-blue:#0095FF;
+$brainflix-darkblue:#0065AD;
+$silver:#AFAFAF;
+$white:#FFFFFF;
+$mercury:#E1E1E1;
+$alabaster:#FAFAFA;
+
+//display device breakpoints
+$mobile-breakpoint-max: 767px;
+$tablet-breakpoint-min: 768px;
+$desktop-breakpoint-min: 1280px;
