@@ -74,5 +74,17 @@ function displayComments(arr) {
     }
 }
 
-displayComments(arr)
+function Comments(){
+    return(
+        <>
+            <div className="comment__default-comment">
+                display comments
+            </div>
+            
+        </>
+    )
+}
+
+export default Comments;
+
 

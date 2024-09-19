@@ -1,5 +1,7 @@
 import './App.scss'
 import Header from './components/Header/Header'
+import Comments from './components/Comments/Comments'
+import VideoPlayer from './components/VideoPlayer/VideoPlayer'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -7,6 +9,8 @@ function App() {
   return (
     <>
     <Header/>
+    <VideoPlayer/>
+    <Comments/>
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

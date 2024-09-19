@@ -1,1 +1,33 @@
-/*# sourceMappingURL=VideoPlayer.css.map */
+@font-face {
+  font-family: avenir-next-bold;
+  src: url("/src/assets/fonts/AvenirNextLTPro-Bold.otf");
+}
+@font-face {
+  font-family: avenir-next-regular;
+  src: url("/src/assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: avenir-next-demi;
+  src: url("/src/assets/fonts/AvenirNextLTPro-Demi.otf");
+}
+.player-wrapper {
+  background-color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .player-wrapper {
+    padding: 0 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .player-wrapper {
+    padding: 0 11.6rem;
+  }
+}
+.player-wrapper__player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.player-wrapper__player-background {
+  position: relative;
+}/*# sourceMappingURL=VideoPlayer.css.map */
