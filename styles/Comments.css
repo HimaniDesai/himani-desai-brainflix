@@ -1,1 +1,110 @@
-/*# sourceMappingURL=Comments.css.map */
+@font-face {
+  font-family: avenir-next-bold;
+  src: url("/src/assets/fonts/AvenirNextLTPro-Bold.otf");
+}
+@font-face {
+  font-family: avenir-next-regular;
+  src: url("/src/assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: avenir-next-demi;
+  src: url("/src/assets/fonts/AvenirNextLTPro-Demi.otf");
+}
+.comment-card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  border-bottom: solid 2px #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .comment-card {
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comment-card {
+    padding-right: 2rem;
+    padding-left: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comment-card {
+    border-bottom: none;
+    border-top: solid 2px #E1E1E1;
+    padding-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+.comment-card__img {
+  height: 2.25rem;
+  width: 2.25rem;
+  background-color: #E1E1E1;
+  border-radius: 50%;
+}
+@media screen and (min-width: 768px) {
+  .comment-card__img {
+    margin-right: 1rem;
+    height: 2.15rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comment-card__img {
+    width: 4rem;
+    margin-right: 2.5rem;
+  }
+}
+.comment-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  font-family: avenir-next-regular;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .comment-card-wrapper {
+    font-family: avenir-next-regular;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    width: 90vw;
+  }
+}
+.comment-card-wrapper-top {
+  display: flex;
+  justify-content: space-between;
+}
+.comment-card-wrapper-top__name {
+  font-family: avenir-next-demi;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+}
+@media screen and (min-width: 768px) {
+  .comment-card-wrapper-top__name {
+    font-family: avenir-next-demi;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.comment-card-wrapper-top__date {
+  font-family: avenir-next-demi;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  color: #AFAFAF;
+}
+@media screen and (min-width: 768px) {
+  .comment-card-wrapper-top__date {
+    font-family: avenir-next-demi;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.comment-card-wrapper__comment {
+  padding-bottom: 1rem;
+}/*# sourceMappingURL=Comments.css.map */

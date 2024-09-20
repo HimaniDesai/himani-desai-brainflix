@@ -1,3 +1,5 @@
+import './Comments.scss'
+
 let comments=[
     {
       name: "Victor Pinto",
@@ -19,72 +21,21 @@ let comments=[
     }
   ];
 
-function displayComments(arr) {
-    //Used DOM  API
-    let commentContainer = document.querySelector(".comment__default-comment");
-    commentContainer.innerHTML="";
-  
-    for (let i = 0; i < arr.length; i++) {
-      //div that holds all of my default comment content
-      let defaultContainer = document.createElement("div");
-      defaultContainer.classList.add("comment__default");
-      commentContainer.appendChild(defaultContainer);
-  
-      //image container
-      let imageContainer = document.createElement("div");
-      imageContainer.classList.add("comment__image-container-one");
-      defaultContainer.appendChild(imageContainer);
-  
-      // div that holds default comments
-      let headerContainer = document.createElement("div");
-      headerContainer.classList.add("comment__header");
-      if (i==0){
-        headerContainer.classList.add("comment__header--first");
-      }
-      defaultContainer.appendChild(headerContainer);
-  
-      //image
-      let image = document.createElement("div");
-      image.classList.add("comment__header--image-one");
-      imageContainer.appendChild(image);
-  
-      //name
-      let name = document.createElement("h2");
-      name.classList.add("comment__header--name");
-      name.innerText = arr[i]["name"];
-      headerContainer.appendChild(name);
-  
-      //date
-      let date = document.createElement("h3");
-      date.classList.add("comment__header--date");
-      let v = new Date(arr[i]["timestamp"])
-      date.innerText = v.getUTCMonth()+1 + "/" + v.getDate() + "/" + v.getFullYear();
-      headerContainer.appendChild(date);
-  
-      //comment container
-      let textContainer = document.createElement("div");
-      textContainer.classList.add("comment__text-container-default");
-      defaultContainer.appendChild(textContainer);
-  
-      //comment
-      let comment = document.createElement("p");
-      comment.classList.add("comment__text-container-default--comment");
-      comment.innerText = arr[i]["comment"];
-      textContainer.appendChild(comment);
-    }
-}
-
-function Comments(){
-    return(
-        <>
-            <div className="comment__default-comment">
-                display comments
+  function Comments({comment}){
+    return (
+        <div className='comment-card'>
+            <div className='comment-card__img'></div>
+                <div className='comment-card-wrapper'>
+                    <div className='comment-card-wrapper-top'>
+                        <p className='comment-card-wrapper-top__name'>{comment.name}</p>
+                        <p className='comment-card-wrapper-top__date'>{new Date(comment.date).toLocaleDateString()}</p>
+                    </div>
+                    <p className='comment-card-wrapper__comment'>{comment.comment}</p>
+                </div>
             </div>
             
-        </>
     )
 }
-
 export default Comments;
 
 

@@ -1,6 +1,7 @@
 import './App.scss'
 import Header from './components/Header/Header'
 import Comments from './components/Comments/Comments'
+import NewComment from './components/NewComment/NewComment'
 import VideoPlayer from './components/VideoPlayer/VideoPlayer'
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <>
     <Header/>
     <VideoPlayer/>
-    <Comments/>
+    <NewComment/>
+    {/* <Comments/> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
