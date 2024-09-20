@@ -38,6 +38,7 @@
         flex-direction: row;
         justify-content: space-between;
         border-bottom: solid 2px $mercury;
+        color: $silver;
         // padding: 1rem 0 1rem 0;
 
         @include desktop {
@@ -55,7 +56,7 @@
             }
 
             &__author {
-                // padding-bottom: 1rem;
+                color: $brainflix-black;
 
                 @include tablet {
                     padding: 0rem 2rem 0 0 ;
