@@ -10,7 +10,6 @@ function Header() {
         <header className="header">
           <div className="header-wrapper">
             <img className="header-wrapper__logo" src={companyLogo}></img>
-            {/* <Link to={'/'}></Link> */}
           </div>
           
           <div className="search-section">

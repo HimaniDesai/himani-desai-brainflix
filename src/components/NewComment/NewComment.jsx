@@ -25,7 +25,7 @@ function NewComment({video}) {
                     </form>
                 </div>   
             </div>
-            {video.comments.map(comment => <Comments comment={comment}/>)}
+            {video.comments.map(comnt => <Comments comment={comnt}/>)}
         </div>
     )
 }
