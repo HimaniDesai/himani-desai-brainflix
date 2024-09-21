@@ -13,15 +13,15 @@
 .desktop-bottom {
 
   @include desktop {
-      width: 100%;
+      width: 95vw;
       display: flex;
-      padding: 0 4rem 0 4rem;
+      padding: 0 0 0 4rem;
   }
 
   &-left {
 
       @include desktop {
-          width: 60%;
+          width: 65%;
           border-right: solid 2px $mercury;
       }
   }
@@ -31,7 +31,7 @@
 .loader {
 
   &-wrapper {
-      width: 100%;
+      // width: 100%;
       height: 75vh;
       display: flex;
       justify-content: center;
