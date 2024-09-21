@@ -1,13 +1,16 @@
 @font-face {
-  font-family: avenir-next-bold;
+  font-family: avenir-next-regular;
+  font-weight: 700;
   src: url("/src/assets/fonts/AvenirNextLTPro-Bold.otf");
 }
 @font-face {
   font-family: avenir-next-regular;
+  font-weight: 400;
   src: url("/src/assets/fonts/AvenirNextLTPro-Regular.otf");
 }
 @font-face {
-  font-family: avenir-next-demi;
+  font-family: avenir-next-regular;
+  font-weight: 600;
   src: url("/src/assets/fonts/AvenirNextLTPro-Demi.otf");
 }
 .video-text {
@@ -37,7 +40,7 @@
 .video__title {
   border-bottom: solid 2px #E1E1E1;
   padding-bottom: 1rem;
-  font-family: avenir-next-bold;
+  font-family: avenir-next-regular;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
@@ -47,7 +50,7 @@
   .video__title {
     border: none;
     padding-bottom: 0rem;
-    font-family: avenir-next-bold;
+    font-family: avenir-next-regular;
     font-weight: 700;
     font-size: 36px;
     line-height: 44px;

@@ -1,13 +1,16 @@
 @font-face {
-  font-family: avenir-next-bold;
+  font-family: avenir-next-regular;
+  font-weight: 700;
   src: url("/src/assets/fonts/AvenirNextLTPro-Bold.otf");
 }
 @font-face {
   font-family: avenir-next-regular;
+  font-weight: 400;
   src: url("/src/assets/fonts/AvenirNextLTPro-Regular.otf");
 }
 @font-face {
-  font-family: avenir-next-demi;
+  font-family: avenir-next-regular;
+  font-weight: 600;
   src: url("/src/assets/fonts/AvenirNextLTPro-Demi.otf");
 }
 .comment-card {
@@ -77,21 +80,21 @@
   justify-content: space-between;
 }
 .comment-card-wrapper-top__name {
-  font-family: avenir-next-demi;
+  font-family: avenir-next-regular;
   font-weight: 700;
   font-size: 14px;
   line-height: 22px;
 }
 @media screen and (min-width: 768px) {
   .comment-card-wrapper-top__name {
-    font-family: avenir-next-demi;
+    font-family: avenir-next-regular;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
   }
 }
 .comment-card-wrapper-top__date {
-  font-family: avenir-next-demi;
+  font-family: avenir-next-regular;
   font-weight: 700;
   font-size: 14px;
   line-height: 22px;
@@ -99,7 +102,7 @@
 }
 @media screen and (min-width: 768px) {
   .comment-card-wrapper-top__date {
-    font-family: avenir-next-demi;
+    font-family: avenir-next-regular;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;

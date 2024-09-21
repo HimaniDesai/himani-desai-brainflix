@@ -1,0 +1,58 @@
+@use '../../../src/styles/partials/mixins' as *;
+@use '../../../src/styles/partials/typography' as *;
+@use '../../../src/styles/partials/variables' as *;
+
+
+
+.next-video {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+
+    @include tablet {
+        justify-content: flex-start;
+    }
+    
+    &__thumbnail {
+        width: 33vw;
+        height: 21vw;
+        object-fit: cover;
+        border-radius: 4px;
+
+        @include tablet {
+            width: 7rem;
+            height: 3.9375rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: $brainflix-black;
+        width: 53vw;
+        margin: 0%;
+        @include body-copy-mobile;
+
+        @include tablet {
+            width: 13rem;
+            @include body-copy-desktop;
+            
+        }
+
+        &__title {
+            color: $brainflix-black;
+            @include labels-buttons-mobile;
+            margin-top: 0%;
+            @include tablet {
+                @include labels-buttons-desktop;
+            }
+        }
+
+        &__channel {
+            color: $brainflix-black;
+            margin: 0%;;
+        }
+    }
+}

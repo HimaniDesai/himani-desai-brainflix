@@ -1,12 +1,12 @@
 import './VideoPlayer.scss';
-import videoImage from '../../assets/images/Upload-video-preview.jpg';
+// import videoImage from '../../assets/images/Upload-video-preview.jpg';
 
-function VideoPlayer(){
+function VideoPlayer({video}){
     return (
         <>
             <div className='player-wrapper'>
                 <div className='player-wrapper__player-background'>
-                    <video className="player-wrapper__player" controls poster={videoImage}></video>
+                    <video className="player-wrapper__player" controls poster={video.image}></video>
                 </div>
             </div>
         </>

@@ -1,11 +1,12 @@
 import './App.scss'
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { useParams, Routes,Route } from 'react-router-dom'
 // import videoList from './data/video-details.json'
 import Header from './components/Header/Header'
 import NewComment from './components/NewComment/NewComment'
 import VideoPlayer from './components/VideoPlayer/VideoPlayer'
-import VideoContent from './components/VideoContent/VideoContent';
+import VideoContent from './components/VideoContent/VideoContent'
+import NextVideos from './components/NextVideos/NextVideos'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -21,7 +22,7 @@ function App() {
   let videoIdDisplayed = idFromParams || defaultVideoId;
 
   const filteredVideos = videos.filter(video => video.id !== videoIdDisplayed)
-
+  console.log(filteredVideos);
   useEffect(() => {
     fetch('./src/data/video-details.json')
         .then(res=>res.json())
@@ -51,10 +52,14 @@ function App() {
   return (
     <>
     <Header/>
-    <VideoPlayer/>
-    <VideoContent video={video} />
-    <NewComment video={video}/>
-    {/* <Comments/> */}
+    <VideoPlayer video={video}/>
+    <div className='desktop-bottom'>
+      <div className='desktop-bottom-left'>
+        <VideoContent video={video}/>
+        <NewComment video={video}/>
+      </div>
+      <NextVideos videos={filteredVideos}/>
+    </div>
     </>
   )
 }
