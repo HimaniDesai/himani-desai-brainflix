@@ -80,6 +80,8 @@
   justify-content: space-between;
 }
 .comment-card-wrapper-top__name {
+  margin: 0%;
+  height: fit-content;
   font-family: avenir-next-regular;
   font-weight: 700;
   font-size: 14px;
@@ -94,6 +96,8 @@
   }
 }
 .comment-card-wrapper-top__date {
+  margin: 0%;
+  height: fit-content;
   font-family: avenir-next-regular;
   font-weight: 700;
   font-size: 14px;

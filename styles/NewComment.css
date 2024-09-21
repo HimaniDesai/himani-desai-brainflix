@@ -33,7 +33,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 22px;
-  padding: 1rem 0;
+  margin: 0%;
   text-align: left;
 }
 @media screen and (min-width: 768px) {
@@ -132,7 +132,7 @@
   font-family: avenir-next-regular;
   font-weight: 700;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 20px;
   color: #AFAFAF;
   text-align: left;
 }
@@ -140,8 +140,9 @@
   .input-wrapper__label {
     font-family: avenir-next-regular;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 14px;
+    line-height: 20px;
+    font-size: 400;
     width: 30rem;
     height: 2rem;
   }

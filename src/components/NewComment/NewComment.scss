@@ -19,7 +19,8 @@
 
     &__number {
         @include subheader-mobile;
-        padding: 1rem 0;
+        // padding: 1rem 0;
+        margin: 0%;
         text-align: left;
 
         @include tablet {
@@ -109,11 +110,12 @@
         }
 
         &__label{
-            @include subheader-mobile;
+            @include labels-buttons-mobile;
             color: $silver;
             text-align: left;
             @include tablet {
-                @include subheader-desktop;
+                @include labels-buttons-desktop;
+                font-size: 400;
                 width: 30rem;
                 height: 2rem;
             }

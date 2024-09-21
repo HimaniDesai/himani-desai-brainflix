@@ -57,7 +57,10 @@
             display: flex;
             justify-content: space-between;
             // padding-bottom: 0.5rem;
+            
             &__name{
+                margin: 0%;
+                height: fit-content;
                 @include subheader-mobile;
                 @include tablet{
                     @include subheader-desktop;
@@ -65,6 +68,8 @@
 
             }
             &__date{
+                margin: 0%;
+                height: fit-content;
                 @include subheader-mobile;
                 color: $silver;
                 @include tablet{
