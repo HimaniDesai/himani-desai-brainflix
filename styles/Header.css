@@ -129,6 +129,9 @@ a {
   background-repeat: no-repeat;
   background-position: 8px center;
 }
+.search-section__button:hover {
+  background-color: #0065AD;
+}
 @media screen and (min-width: 768px) {
   .search-section__button {
     display: none;
@@ -150,6 +153,9 @@ a {
   background-image: url(/src/assets/icons/upload.svg);
   background-repeat: no-repeat;
   background-position: 8px center;
+}
+.search-section__button-tablet:hover {
+  background-color: #0065AD;
 }
 @media screen and (min-width: 768px) {
   .search-section__button-tablet {

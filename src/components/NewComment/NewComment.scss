@@ -132,10 +132,9 @@
             height: 2.3rem;
             line-height: 2.3rem;
             border-radius: 4px;
-            background-image: url(../../assets/images/add_comment.svg);
-            background-repeat: no-repeat;
-            background-position: 0.7rem center;
-            background-size: 1.2rem;
+            &:hover {
+                background-color: $brainflix-darkblue;
+            }
 
             @include tablet {
                 @include body-copy-desktop;
@@ -146,7 +145,7 @@
             }
 
             @include desktop {
-                margin-top: 4rem;
+                margin-top: 3rem;
                 height: 2.5rem;
                 margin-bottom: 1rem;
             }

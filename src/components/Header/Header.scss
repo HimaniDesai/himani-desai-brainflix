@@ -110,7 +110,9 @@ a{
         background-image: url(/src/assets/icons/upload.svg);
         background-repeat: no-repeat;
         background-position: 8px center;
-
+        &:hover {
+            background-color: $brainflix-darkblue;
+        }
         @include tablet {
             display: none;
         }
@@ -128,7 +130,9 @@ a{
             background-image: url(/src/assets/icons/upload.svg);
             background-repeat: no-repeat;
             background-position: 8px center;
-
+            &:hover {
+                background-color: $brainflix-darkblue;
+            }
             @include tablet {
                 display: block;
             }
