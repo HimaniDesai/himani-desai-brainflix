@@ -7,7 +7,7 @@ function VideoPlayer({video}){
             <div className='player-wrapper'>
                 <div className='player-wrapper__player-background'>
                     <video className="player-wrapper__player" controls poster={video.image}>
-                        {/* <source src={video.video}></source> */}
+                        <source src={video.video}></source>
                     </video>
                 </div>
             </div>
