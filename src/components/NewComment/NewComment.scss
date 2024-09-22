@@ -48,7 +48,7 @@
         border-bottom: none;
         margin-bottom: 0;
         padding-left: 1rem;
-        padding-right: 2rem;
+        // padding-right: 2rem;
     }
 
     &-img {
@@ -79,8 +79,7 @@
         }
 
         &__text {
-            // width: 73vw;
-            width:64vw;
+            width: 90%;
             height: 2.5rem;
             margin-top: 0.2rem;
             margin-bottom: 1rem;
@@ -140,7 +139,7 @@
                 @include body-copy-desktop;
                 width: 10rem;
                 height: 2.5rem;
-                margin-top: 3.5rem;
+                margin-top: 2rem;
                 margin-bottom: 1rem;
             }
 

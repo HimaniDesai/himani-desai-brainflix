@@ -128,6 +128,9 @@
     padding: 0rem 0rem 1rem 0rem;
   }
 }
+.video-info-right-likes__img {
+  padding: 0rem 0.5rem 0rem 0rem;
+}
 @media screen and (min-width: 768px) {
   .video-info-right-likes__img {
     padding: 0rem 0.5rem 0rem 0rem;

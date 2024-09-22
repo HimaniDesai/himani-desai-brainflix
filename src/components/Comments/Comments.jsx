@@ -1,6 +1,7 @@
 import './Comments.scss'
 
   function Comments({comment}){
+    
     return (
         <div className='comment-card'>
             <div className='comment-card__img'></div>

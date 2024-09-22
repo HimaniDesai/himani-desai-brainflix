@@ -29,18 +29,19 @@
 }
 
 .loader {
-
-  &-wrapper {
-      // width: 100%;
-      height: 75vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
   border: 16px solid $mercury;
   border-top: 16px solid $brainflix-blue; 
   border-radius: 50%;
   width: 9rem;
   height: 9rem;
+
+  &-wrapper {
+    // width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
 }
