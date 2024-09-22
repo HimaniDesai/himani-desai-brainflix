@@ -1,0 +1,121 @@
+@use '../../../src/styles/partials/mixins' as *;
+@use '../../../src/styles/partials/typography' as *;
+@use '../../../src/styles/partials/variables' as *;
+
+
+.video-text {
+    padding: 1rem 1rem 0rem 1rem;
+    @include body-copy-mobile;
+    text-align: left;
+    color: $brainflix-black;
+
+    @include tablet {
+        padding: 1rem 2rem 0rem 2rem;
+        @include body-copy-desktop;
+    }
+
+    @include desktop {
+        padding: 2rem 0rem 0rem 2rem;
+    }
+}
+
+.video__title {
+    border-bottom: solid 2px $mercury;
+    padding-bottom: 1rem;
+    @include section-header-mobile;
+    margin-bottom: 0%;
+
+    @include tablet {
+        border: none;
+        padding-bottom: 0rem;
+        @include section-header-desktop;
+    }
+}
+
+
+.video-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: solid 2px $mercury;
+        color: $silver;
+        // padding: 1rem 0 1rem 0;
+
+        @include desktop {
+            padding-right: 2rem;
+        }
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+            }
+
+            &__author {
+                color: $brainflix-black;
+
+                @include tablet {
+                    padding: 0rem 2rem 0 0 ;
+                }
+            }
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            &-views {
+                // width: 10vw;
+                display: flex;
+                justify-content: flex-start;
+
+                @include tablet {
+                    justify-content: flex-end;
+                }
+
+                &__img {
+                    padding: 0rem 0.5rem 0rem 0rem;
+                    @include tablet{
+                        padding: 1rem 0.5rem 2rem 0rem;
+                    }
+                }
+            }
+
+            &-likes {
+                width: 15vw;
+                display: flex;
+                justify-content: flex-start;
+
+                @include tablet {
+                    justify-content: flex-end;
+                    padding: 0rem 0rem 1rem 0rem;
+                }
+
+                &__img {
+                    padding: 0rem 0.5rem 0rem 0rem;
+                    @include tablet {
+                        padding: 0rem 0.5rem 0rem 0rem;
+                    }
+                }
+            }
+        }
+}
+
+.video__desc {
+    padding-top: 1rem;
+
+    @include desktop {
+        padding-right: 2rem;
+    }
+}

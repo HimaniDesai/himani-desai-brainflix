@@ -1,0 +1,29 @@
+@use '../../../src/styles/partials/mixins' as *;
+@use '../../../src/styles/partials/typography' as *;
+@use '../../../src/styles/partials/variables' as *;
+
+.next-videos {
+    padding: 0 1rem 1rem 1rem;
+    
+    @include tablet {
+        padding: 0 2rem 2rem 2rem;
+        
+    }
+
+    @include desktop {
+        // display: block;
+        // width: auto;
+        padding: 2rem 2rem 4rem 2rem;
+    }
+
+    &__header {
+        padding-bottom: 0.5rem;
+        @include subheader-mobile;
+        text-align: left;
+        color: $silver;
+        @include tablet {
+            padding-bottom: 1rem;
+            @include subheader-desktop;
+        }
+    }
+}
