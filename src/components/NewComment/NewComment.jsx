@@ -1,6 +1,7 @@
 import './NewComment.scss'
 import mohan from '../../assets/images/Mohan-muruge.jpg'
 import Comments from '../Comments/Comments.jsx'
+import Button from '../Button/Button.jsx';
 
 
 function NewComment({video}) {
@@ -21,8 +22,8 @@ function NewComment({video}) {
                             <textarea className='input-wrapper__text' placeholder='Add a new comment' required name='text'></textarea>
                             <div htmlFor='submit' ></div>
                         </div>
-                        
-                        <button name='submit' className='input-wrapper__submit'>COMMENT</button>
+                        <Button text='COMMENT' class='input-wrapper__submit'/>
+                        {/* <button name='submit' className='input-wrapper__submit'>COMMENT</button> */}
                     </form>
                 </div>   
             </div>

@@ -1,5 +1,6 @@
+import './Home.scss'
 import { useEffect, useState } from 'react'
-import { useParams, Routes,Route } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 // import videoList from './data/video-details.json'
 
 import NewComment from '../../components/NewComment/NewComment'
@@ -23,7 +24,7 @@ function Home () {
   const filteredVideos = videos.filter(video => video.id !== videoIdDisplayed)
   console.log(filteredVideos);
   useEffect(() => {
-    fetch('./src/data/video-details.json')
+    fetch('../../src/data/video-details.json')
         .then(res=>res.json())
         .then(res => {
             setVideos(res);
@@ -36,7 +37,7 @@ function Home () {
     if(videoIdDisplayed === null){
         return;
     }
-    fetch('./src/data/video-details.json')
+    fetch('../../src/data/video-details.json')
         .then(res=>res.json())
         .then(response => {
             setVideo(response[0]);

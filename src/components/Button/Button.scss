@@ -1,0 +1,25 @@
+@use '../../../src/styles/partials/mixins' as *;
+@use '../../../src/styles/partials/typography' as *;
+@use '../../../src/styles/partials/variables' as *;
+
+.primary-btn {
+    @include labels-buttons-mobile;
+    background-color: $brainflix-blue;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .transparent-btn {
+    color: $brainflix-blue;
+    background-color: unset;
+  }
+  
+  .img-icon {
+    margin-right: 0.3rem;
+  }
+  
