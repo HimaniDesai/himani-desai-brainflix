@@ -1,0 +1,42 @@
+@use '../../../src/styles/partials/mixins' as *;
+@use '../../../src/styles/partials/typography' as *;
+@use '../../../src/styles/partials/variables' as *;
+
+
+
+.desktop-bottom {
+
+    @include desktop {
+        width: 95vw;
+        display: flex;
+        padding: 0 0 0 4rem;
+    }
+  
+    &-left {
+  
+        @include desktop {
+            width: 65%;
+            border-right: solid 2px $mercury;
+        }
+    }
+    
+  }
+  
+  .loader {
+    border: 16px solid $mercury;
+    border-top: 16px solid $brainflix-blue; 
+    border-radius: 50%;
+    width: 9rem;
+    height: 9rem;
+  
+    &-wrapper {
+      // width: 100%;
+      height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    
+  }
+  
