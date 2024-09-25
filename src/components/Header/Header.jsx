@@ -1,8 +1,6 @@
 import "./Header.scss";
 import companyLogo from '../../assets/logo/Brainflix-logo.svg';
 import profilePic from '../../assets/images/Mohan-muruge.jpg';
-// import upload_icon from '../../assets/icons/upload.svg';
-import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 
 
@@ -22,8 +20,7 @@ function Header() {
               <label>
                 <input type='text' className="search-section-wrapper__input" placeholder="Search"></input>
               </label>
-              {/* <a href={'/src/App.js'}><button className="search-section__button-tablet">UPLOAD</button></a> */}
-              <Button text='UPLOAD' class='search-section__button-tablet'/>
+              <Link to={'/upload'}><button  className='search-section__button-tablet'>UPLOAD</button></Link>
               <img className="search-section-wrapper__user" src={profilePic}></img>
             </div>
             <button className="search-section__button">UPLOAD</button>
