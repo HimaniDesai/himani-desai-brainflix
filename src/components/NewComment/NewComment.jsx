@@ -7,7 +7,7 @@ function NewComment({video}) {
         const count = video.comments.length;
         return count === 1 ? '1 Comment' : `${count} Comments`;
     };
-    video.comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    // video.comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     return (
         <div className='comment-section'>
             <p className='comment-section__number'>{getCommentCountText()}</p>

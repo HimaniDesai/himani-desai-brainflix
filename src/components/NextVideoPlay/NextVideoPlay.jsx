@@ -5,7 +5,7 @@ import './NextVideoPlay.scss'
 function NextVideoPlay({video}) {
     return (
         <>
-        <Link to={'/video/${video.id}'}>
+        <Link to={`/video/${video.id}`}>
             <div className='next-video'>
                 <img className='next-video__thumbnail' 
                 alt='thumbnail' 

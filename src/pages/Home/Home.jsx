@@ -2,12 +2,14 @@ import './Home.scss'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 // import videoList from './data/video-details.json'
-
+import axios from 'axios'
 import NewComment from '../../components/NewComment/NewComment'
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer'
 import VideoContent from '../../components/VideoContent/VideoContent'
 import NextVideos from '../../components/NextVideos/NextVideos'
 
+const apikey = '?api_key=de643465-7777-40f7-9f8b-6bd5cd814bbb'
+const api = 'https://project-2-api.herokuapp.com';
 function Home () {
     // const [count, setCount] = useState(0)
 
@@ -24,23 +26,21 @@ function Home () {
   const filteredVideos = videos.filter(video => video.id !== videoIdDisplayed)
   console.log(filteredVideos);
   useEffect(() => {
-    fetch('../../src/data/video-details.json')
-        .then(res=>res.json())
+    axios.get(api + '/videos'+apikey)
         .then(res => {
-            setVideos(res);
+            setVideos(res.data);
         })
   }, [])
   console.log(videos);
   const [video, setVideo] = useState(null)
-
+  console.log(video);
   useEffect(() => {
     if(videoIdDisplayed === null){
-        return;
+      return;
     }
-    fetch('../../src/data/video-details.json')
-        .then(res=>res.json())
+    axios.get(api + `/videos/${videoIdDisplayed}` + apikey)
         .then(response => {
-            setVideo(response[0]);
+            setVideo(response.data);
         })
   }, [videoIdDisplayed])
 
