@@ -39,14 +39,13 @@ function NewComment({handleOnSubmitComment, handleOnClickDelete, commentArr}) {
                             <div className='input-wrapper__label' htmlFor='text'>JOIN THE CONVERSATION</div>
                             <textarea 
                                 className= {IsCommentValid()? 
-                                    'input-wrapper__text' : ' input-wrapper__text input-wrapper__text--error' } 
+                                    'input-wrapper__text' : ' input-wrapper__text input-wrapper__text-error' } 
                                 placeholder='Add a new comment' 
                                 id='input'
                                 value={comment}
                                 onChange={handleChangeComment} 
                                 name='input'
                             ></textarea>
-                            {/* <div htmlFor='submit' ></div> */}
                         </div>
                         <button name='submit' className='input-wrapper__submit'>COMMENT</button>
                     </form>

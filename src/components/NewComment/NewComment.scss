@@ -106,14 +106,15 @@
             @include desktop {
                 width: 32rem;
             }
+
+            &-error {
+                &:focus {
+                    outline: 1px solid #d22d2d !important;
+                  }
+            }
         }
 
-        &__text--error {
-            &:focus {
-                border:none;
-                border: 1px solid #d22d2d;
-              }
-        }
+        
 
         &__label{
             @include labels-buttons-mobile;
@@ -143,7 +144,7 @@
             }
 
             @include tablet {
-                @include body-copy-desktop;
+                @include labels-buttons-desktop;
                 width: 10rem;
                 height: 2.5rem;
                 margin-top: 2rem;

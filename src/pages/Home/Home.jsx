@@ -32,22 +32,16 @@ function Home () {
       });
   }, []);
   let getId = (videoList &&
-      videoList.filter((obj) => obj.id === idFromParams).length > 0 &&
-      idFromParams) ||
-    (videoList[0] && videoList[0].id);
+      videoList.filter((obj) => obj.id === idFromParams).length > 0 && idFromParams) ||(videoList[0] && videoList[0].id);
 
   //USE ID TO GET DATA OF THE VIDEO OBJECT AND STORE IT IN THE CURRENTVIDEO STATE
   useEffect(() => {
     console.log("VIdeoList " + videoList + "ID" + idFromParams)
     if (getId) {
-      console.log("New VIdeo")
       axios
         .get(getVideo(getId))
         .then((response) => {
-          console.log(currentVideo);
           setCurrentVideo(response.data);
-          console.log(response.data);
-          console.log(currentVideo);
         })
         .catch((error) => {
           console.log(error);
