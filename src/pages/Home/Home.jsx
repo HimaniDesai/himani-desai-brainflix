@@ -1,62 +1,84 @@
 import './Home.scss'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-// import videoList from './data/video-details.json'
 import axios from 'axios'
 import NewComment from '../../components/NewComment/NewComment'
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer'
 import VideoContent from '../../components/VideoContent/VideoContent'
 import NextVideos from '../../components/NextVideos/NextVideos'
+import BrainFlixAPI from '../../BrainflixApi'
 
-const apikey = '?api_key=de643465-7777-40f7-9f8b-6bd5cd814bbb'
-const api = 'https://project-2-api.herokuapp.com';
+const {getVideo, getList} = BrainFlixAPI
+
 function Home () {
     // const [count, setCount] = useState(0)
 
-  const { idFromParams } = useParams();
-  const [videos, setVideos] = useState([]);
-  let defaultVideoId = null;
+  //STATE FOR THE CURRENT VIDEO
+  const [currentVideo, setCurrentVideo] = useState(null);
 
-  if(videos.length > 0) {
-    defaultVideoId = videos[0].id;
-  }
+  //STATE FOR THE VIDEO LIST
+  const [videoList, setVideoList] = useState([]);
 
-  let videoIdDisplayed = idFromParams || defaultVideoId;
+  //USE USEPARAMS TO GET THE VIDEO ID
+  const {idFromParams} = useParams();
 
-  const filteredVideos = videos.filter(video => video.id !== videoIdDisplayed)
-  console.log(filteredVideos);
+  //GET DATA ARRAY AN STORE IT IN THE VIDEOLIST STATE
   useEffect(() => {
-    axios.get(api + '/videos'+apikey)
-        .then(res => {
-            setVideos(res.data);
+    axios
+      .get(getList)
+      .then((response) => {
+        setVideoList(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  let getId = (videoList &&
+      videoList.filter((obj) => obj.id === idFromParams).length > 0 &&
+      idFromParams) ||
+    (videoList[0] && videoList[0].id);
+  //USE ID TO GET DATA OF THE VIDEO OBJECT AND STORE IT IN THE CURRENTVIDEO STATE
+  useEffect(() => {
+    console.log("VIdeoList " + videoList + "ID" + idFromParams)
+    if (getId) {
+      console.log("New VIdeo")
+      axios
+        .get(getVideo(getId))
+        .then((response) => {
+          console.log(currentVideo);
+          setCurrentVideo(response.data);
+          console.log(response.data);
+          console.log(currentVideo);
         })
-  }, [])
-  console.log(videos);
-  const [video, setVideo] = useState(null)
-  console.log(video);
-  useEffect(() => {
-    if(videoIdDisplayed === null){
-      return;
+        .catch((error) => {
+          console.log(error);
+        });
     }
-    axios.get(api + `/videos/${videoIdDisplayed}` + apikey)
-        .then(response => {
-            setVideo(response.data);
-        })
-  }, [videoIdDisplayed])
+  }, [getId, videoList]);
 
-  if(video=== null) {
-    return <div className='loader-wrapper'><div className='loader'></div></div>
-  } 
-
+  //FUNCTION USED TO GET THE CURRENT VIDEO OBJECT AND UPDATE THE OBJECT TO THE CURRENTVIDEO STATE
+  const getAndUpdateCurrentVideo = function () {
+    axios
+      .get(getVideo(currentVideo.id))
+      .then((response) => {
+        setCurrentVideo(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <>
-    <VideoPlayer video={video}/>
+    {/* <VideoPlayer video={video}/> */}
+    {currentVideo && <VideoPlayer videoPoster={currentVideo.image} />}
     <div className='desktop-bottom'>
       <div className='desktop-bottom-left'>
-        <VideoContent video={video}/>
-        <NewComment video={video}/>
+        {currentVideo &&<VideoContent currentVideo={currentVideo}/>}
+        {currentVideo &&<NewComment commentArr={currentVideo.comments.sort(
+                  (a, b) => b.timestamp - a.timestamp
+                )}/>} 
       </div>
-      <NextVideos videos={filteredVideos}/>
+      {currentVideo &&<NextVideos videoList={videoList} currentVideo={currentVideo}/>}
     </div>
     </>
   )
