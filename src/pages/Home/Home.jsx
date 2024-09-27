@@ -8,7 +8,7 @@ import VideoContent from '../../components/VideoContent/VideoContent'
 import NextVideos from '../../components/NextVideos/NextVideos'
 import BrainFlixAPI from '../../BrainflixApi'
 
-const {getVideo, getList, postComment} = BrainFlixAPI
+const {getVideo, getList, postComment, deleteComment} = BrainFlixAPI
 
 function Home () {
   //STATE FOR THE CURRENT VIDEO
@@ -88,6 +88,18 @@ function Home () {
     }
   };
 
+  //DELETE FUNCTION
+  const handleOnClickDelete = function (commentId) {
+    axios
+      .delete(deleteComment(currentVideo.id, commentId))
+      .then((response) => {
+        getAndUpdateCurrentVideo();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <>
     {currentVideo && <VideoPlayer videoPoster={currentVideo.image} />}
@@ -96,6 +108,7 @@ function Home () {
         {currentVideo &&<VideoContent currentVideo={currentVideo}/>}
         {currentVideo &&<NewComment 
                   handleOnSubmitComment={handleOnSubmitComment}
+                  handleOnClickDelete={handleOnClickDelete}
                   commentArr={currentVideo.comments.sort(
                   (a, b) => b.timestamp - a.timestamp
                 )}/>} 

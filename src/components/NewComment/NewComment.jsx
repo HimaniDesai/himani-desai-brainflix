@@ -3,7 +3,7 @@ import mohan from '../../assets/images/Mohan-muruge.jpg'
 import Comments from '../Comments/Comments.jsx'
 import { useState } from 'react';
 
-function NewComment({handleOnSubmitComment, commentArr}) {
+function NewComment({handleOnSubmitComment, handleOnClickDelete, commentArr}) {
     const getCommentCountText = () => {
         const count = commentArr.length;
         return count === 1 ? '1 Comment' : `${count} Comments`;
@@ -52,7 +52,7 @@ function NewComment({handleOnSubmitComment, commentArr}) {
                     </form>
                 </div>   
             </div>
-            {commentArr.map(comnt => <Comments key={comnt.id} comment={comnt}/>)}
+            {commentArr.map((comnt) => <Comments key={comnt.id} comment={comnt} handleOnClickDelete={handleOnClickDelete} />)}
         </div>
     )
 }

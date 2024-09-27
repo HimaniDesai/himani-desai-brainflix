@@ -4,7 +4,8 @@ const BrainflixAPI = {
     getList: api + `/videos` + apikey,
     getVideo:  id => api + `/videos/` + `${id}` + apikey,
     getVideofile: link => `${link}` + apikey,
-    postComment: id => api + `/videos/` + `${id}` + `/comments` + apikey
+    postComment: id => api + `/videos/` + `${id}` + `/comments` + apikey,
+    deleteComment: (videoId,commentId) => api + `/videos/` + `${videoId}` + `/comments/` + `${commentId}` + apikey
 }
 
 
