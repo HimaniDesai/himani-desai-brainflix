@@ -108,6 +108,13 @@
             }
         }
 
+        &__text--error {
+            &:focus {
+                border:none;
+                border: 1px solid #d22d2d;
+              }
+        }
+
         &__label{
             @include labels-buttons-mobile;
             color: $silver;

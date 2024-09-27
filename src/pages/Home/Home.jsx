@@ -8,11 +8,9 @@ import VideoContent from '../../components/VideoContent/VideoContent'
 import NextVideos from '../../components/NextVideos/NextVideos'
 import BrainFlixAPI from '../../BrainflixApi'
 
-const {getVideo, getList} = BrainFlixAPI
+const {getVideo, getList, postComment} = BrainFlixAPI
 
 function Home () {
-    // const [count, setCount] = useState(0)
-
   //STATE FOR THE CURRENT VIDEO
   const [currentVideo, setCurrentVideo] = useState(null);
 
@@ -37,6 +35,7 @@ function Home () {
       videoList.filter((obj) => obj.id === idFromParams).length > 0 &&
       idFromParams) ||
     (videoList[0] && videoList[0].id);
+
   //USE ID TO GET DATA OF THE VIDEO OBJECT AND STORE IT IN THE CURRENTVIDEO STATE
   useEffect(() => {
     console.log("VIdeoList " + videoList + "ID" + idFromParams)
@@ -67,14 +66,37 @@ function Home () {
         console.log(error);
       });
   };
+
+  //SUBMIT FUNCTION
+  const handleOnSubmitComment = function (event, comment) {
+    event.preventDefault();
+    if (comment && [...comment].length > 10) {
+      const commentPost = {
+        name: "BrainStation Guy",
+        comment: comment,
+      };
+      axios
+        .post(postComment(currentVideo.id), commentPost)
+        .then((response) => {
+          getAndUpdateCurrentVideo();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("Comment at least 10 letters");
+    }
+  };
+
   return (
     <>
-    {/* <VideoPlayer video={video}/> */}
     {currentVideo && <VideoPlayer videoPoster={currentVideo.image} />}
     <div className='desktop-bottom'>
       <div className='desktop-bottom-left'>
         {currentVideo &&<VideoContent currentVideo={currentVideo}/>}
-        {currentVideo &&<NewComment commentArr={currentVideo.comments.sort(
+        {currentVideo &&<NewComment 
+                  handleOnSubmitComment={handleOnSubmitComment}
+                  commentArr={currentVideo.comments.sort(
                   (a, b) => b.timestamp - a.timestamp
                 )}/>} 
       </div>

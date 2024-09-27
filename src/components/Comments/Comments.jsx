@@ -1,5 +1,5 @@
 import './Comments.scss'
-import { timeConvDetail } from '../../TimeConversionUtil'
+import { timeConvDetail } from '../../TimeConversionUtil';
 
 function Comments({comment}){
     
