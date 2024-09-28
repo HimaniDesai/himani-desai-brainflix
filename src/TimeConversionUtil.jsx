@@ -1,3 +1,4 @@
+//UTILITY FILE FOR REUSABLE FUNCTIONS
 //FUNCTION USED TO CONVERT TIMESTAMPS
 export const timeConvDetail = function (timestamp) {
     let elapsedTime = (Date.now() - timestamp) / 1000
@@ -36,3 +37,7 @@ export const timeConvDetail = function (timestamp) {
     // }
 }
   
+export const getCommentCountText = (commentArr) => {
+  const count = commentArr.length;
+  return count === 1 ? '1 Comment' : `${count} Comments`;
+};

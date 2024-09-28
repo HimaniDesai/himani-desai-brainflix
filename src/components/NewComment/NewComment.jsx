@@ -2,12 +2,9 @@ import './NewComment.scss'
 import mohan from '../../assets/images/Mohan-muruge.jpg'
 import Comments from '../Comments/Comments.jsx'
 import { useState } from 'react';
-
+import { getCommentCountText } from '../../TimeConversionUtil.jsx';
 function NewComment({handleOnSubmitComment, handleOnClickDelete, commentArr}) {
-    const getCommentCountText = () => {
-        const count = commentArr.length;
-        return count === 1 ? '1 Comment' : `${count} Comments`;
-    };
+    
 
     //STATE FOR THE COMMENT
     const [comment, setComment] = useState("");
@@ -27,7 +24,7 @@ function NewComment({handleOnSubmitComment, handleOnClickDelete, commentArr}) {
 
     return (
         <div className='comment-section'>
-            <p className='comment-section__number'>{getCommentCountText()}</p>
+            <p className='comment-section__number'>{getCommentCountText(commentArr)}</p>
             <div className='input'>
                 <img className='input-img' src={mohan}></img>
                 <div className='input-wrapper'>

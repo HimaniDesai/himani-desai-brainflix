@@ -19,7 +19,7 @@ function Comments({handleOnClickDelete, comment}){
                             }}
                             className="comment-card-wrapper-bottom__delete"
                             >
-                            Delete
+                            DELETE
                         </button>
                     </div>
                 </div>
