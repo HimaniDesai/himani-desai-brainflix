@@ -36,7 +36,6 @@ function Home () {
 
   //USE ID TO GET DATA OF THE VIDEO OBJECT AND STORE IT IN THE CURRENTVIDEO STATE
   useEffect(() => {
-    console.log("VIdeoList " + videoList + "ID" + idFromParams)
     if (getId) {
       axios
         .get(getVideo(getId))
