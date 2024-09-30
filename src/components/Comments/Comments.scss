@@ -79,9 +79,39 @@
             }
         }
         
-
-        &__comment {
+        &-bottom {
+            display: grid;
+            flex-direction: column;
+            // justify-content: space-between;
             padding-bottom: 1rem;
+            &__comment {
+                @include body-copy-mobile;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                @include tablet {
+                    @include body-copy-desktop;
+                }
+            }
+            &__delete {
+                @include labels-buttons-mobile;
+                background-color: $brainflix-black;
+                color: $white;
+                border-style: none;
+                height: 2.5rem;
+                line-height: 2.25rem;
+                width: 7rem;
+                justify-self: right;
+                border-radius: .25rem;
+                text-align: center;
+                align-self: baseline;
+                &:hover {
+                    background-color: $brainflix-darkblack;
+                  }
+                @include tablet {
+                    @include labels-buttons-desktop;
+                }
+
+            }
         }
     }
 }
