@@ -9,15 +9,18 @@ a{
 .header {
     padding: 1rem;
     justify-content: flex-start;
+    width: calc(100% - 32px);
 
     @include tablet {
         display: flex;
         justify-content: space-between;
         padding: 1rem 2rem 1rem 2rem;
+        width: calc(100% - 64px);
     }
 
     @include desktop {
         padding: 1rem 8rem 1rem 8rem;
+        width: calc(100% - 256px);
     }
 
     &-wrapper {
@@ -139,4 +142,3 @@ a{
         }
     }
 }
-

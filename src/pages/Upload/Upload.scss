@@ -1,0 +1,227 @@
+@use '../../../src/styles/partials/mixins' as *;
+@use '../../../src/styles/partials/typography' as *;
+@use '../../../src/styles/partials/variables' as *;
+
+
+.upload {
+    border-top: .125rem solid $mercury;
+    padding: 0 1rem 0 1rem;
+    width: calc(100% - 32px);
+    
+
+    @include tablet {
+        padding: 0 2rem 0 2rem;
+        width: calc(100% - 64px);
+    }
+
+    @include desktop {
+        padding: 0 0 0 12rem;
+        width: calc(100% - 256px);
+
+    }
+
+    &-wrapper {
+        
+        width: 100%;
+        @include desktop {
+            width: 100%;
+        }
+        
+    }
+
+    &__heading {
+        @include section-header-mobile;
+        padding: 1rem 0 1rem 0;
+        color: $brainflix-black;
+        text-align: left;
+        
+        @include tablet {
+            @include section-header-desktop;
+            border-bottom: .125rem solid $mercury;
+            padding-top: 2rem;
+            
+        }
+
+        @include desktop {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &-label {
+
+        &__img {
+            padding-bottom: 0.3rem;
+            padding-top: 0.3rem;
+            @include labels-buttons-mobile;
+            color: $silver;
+            text-align: left;
+            @include tablet {
+                @include labels-buttons-desktop;
+                padding-top: 1.5rem;
+            }
+        }
+
+        &__title {
+            padding-top: 1rem;
+            padding-bottom: 0.3rem;
+        }
+
+        &__desc {
+            padding-bottom: 0.3rem;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: .25rem;
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
+            width: 100%;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            @include desktop {
+                width: 33%;
+            }
+        }
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        @include labels-buttons-mobile;
+        color: $silver;
+        text-align: left;
+
+        @include tablet {
+            @include labels-buttons-desktop;
+            border-bottom: .125rem solid $mercury;
+            margin-bottom: 1rem;
+        }
+
+        @include desktop {
+            width: 50%;
+            border: none;
+            padding-top: 1.5rem;
+            padding-bottom: 0;
+            margin: 0;
+            justify-content: space-between;
+        }
+
+        &__title {
+            @include body-copy-mobile;
+            resize: none;
+            border: .0625rem solid $mercury;
+            border-radius: .25rem;
+            padding: 0.6rem 0 0 0.6rem;
+            height: 2.5rem;
+            margin-bottom: 1rem;
+            background-color: $alabaster;
+            &::placeholder {
+                color: $brainflix-black;
+                justify-self: center;
+            }
+
+            &:focus {
+                outline: solid $brainflix-blue .0625rem;
+            }
+            @include tablet{
+                @include body-copy-desktop;
+
+            }
+        }
+
+        &__desc {
+            @include body-copy-mobile;
+            resize: none;
+            border: .0625rem solid $mercury;
+            border-radius: .25rem;
+            padding: 0.6rem;
+            background-color: $alabaster;
+            &::placeholder {
+                color: $brainflix-black;
+                justify-self: center;
+            }
+
+            &:focus {
+                outline: solid $brainflix-blue .0625rem;
+            }
+
+            @include tablet {
+                @include body-copy-desktop;
+                height: 5rem;
+            }
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 1rem;
+        @include labels-buttons-mobile;
+        color: $white;
+        @include tablet {
+            @include labels-buttons-desktop;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+
+        &__publish {
+            @include labels-buttons-mobile;
+            color: $white;
+            width: 100%;
+            height: 2.5rem;
+            border: none;
+            border-radius: .25rem;
+            margin-bottom: 1rem;
+            background-image: url(/src/assets/icons/publish.svg);
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-color: $brainflix-blue;
+            @include tablet{
+                @include labels-buttons-desktop;
+                width: 10rem;
+            }
+        }
+
+        &__cancel {
+            @include labels-buttons-mobile;
+            color: $brainflix-blue;
+            width: 100%;
+            height: 2.5rem;
+            border: none;
+            border-radius: .25rem;
+            background-color: $white;
+
+            @include tablet {
+                @include labels-buttons-desktop;
+                width: 10rem;
+            }
+            
+            @include desktop {
+                width: 10rem;
+            }
+        }
+    }
+}
+
+.desktop-wrapper {
+    
+    @include desktop {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: .125rem solid $mercury;
+        padding-bottom: 2rem;
+        margin-bottom: 1rem;
+    }
+}

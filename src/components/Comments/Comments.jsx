@@ -1,6 +1,7 @@
 import './Comments.scss'
+import { timeConvDetail } from '../../TimeConversionUtil';
 
-  function Comments({comment}){
+function Comments({handleOnClickDelete, comment}){
     
     return (
         <div className='comment-card'>
@@ -8,14 +9,22 @@ import './Comments.scss'
                 <div className='comment-card-wrapper'>
                     <div className='comment-card-wrapper-top'>
                         <p className='comment-card-wrapper-top__name'>{comment.name}</p>
-                        <p className='comment-card-wrapper-top__date'>{new Date(comment.timestamp).toLocaleDateString()}</p>
+                        <p className='comment-card-wrapper-top__date'>{timeConvDetail(comment.timestamp)}</p>
                     </div>
-                    <p className='comment-card-wrapper__comment'>{comment.comment}</p>
+                        <div className='comment-card-wrapper-bottom'>
+                        <div className='comment-card-wrapper-bottom__comment'>{comment.comment}</div>
+                        <button
+                            onClick={() => {
+                                handleOnClickDelete(comment.id);
+                            }}
+                            className="comment-card-wrapper-bottom__delete"
+                            >
+                            DELETE
+                        </button>
+                    </div>
                 </div>
             </div>
             
     )
 }
 export default Comments;
-
-
