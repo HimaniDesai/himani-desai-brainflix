@@ -74,6 +74,9 @@
     &__img {
         width: 100%;
         border-radius: .25rem;
+        &-display__none {
+            display: none;
+          }
 
         @include tablet {
             width: 50%;
@@ -158,6 +161,12 @@
             @include tablet {
                 @include body-copy-desktop;
                 height: 5rem;
+            }
+        }
+        &__title-input--error,
+        &__descript-input--error {
+            &:focus {
+            border: 1px solid #d22d2d;
             }
         }
     }

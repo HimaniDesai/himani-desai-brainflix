@@ -8,6 +8,7 @@ const BrainflixAPI = {
     postComment: id => api + `/videos/` + `${id}` + `/comments` + apikey,
     deleteComment: (videoId,commentId) => api + `/videos/` + `${videoId}` + `/comments/` + `${commentId}` + apikey,
     likeComment: id => api + `/videos/` + `${id}` + `/likes` + apikey,
+    postForm: api + `/videos` + apikey,
 }
 
 
