@@ -7,6 +7,8 @@ import BrainflixAPI from '../../BrainflixApi';
 
 const {postForm} = BrainflixAPI;
 function Upload() {
+
+    const navigate = useNavigate();
     //STATE TO STORE THE INPUT VALUES OF INPUT BOXES
     const [title, setTitle] = useState("");
     const [descript, setDescript] = useState("");
