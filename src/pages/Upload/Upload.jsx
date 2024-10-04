@@ -111,7 +111,10 @@ function Upload() {
                                     ? 'upload__img'
                                     : 'upload__img-display__none' }
                                 alt='test-thumbnail' 
-                                src={previewFile}></img> 
+                                src={previewFile
+                                    ? previewFile
+                                    : UploadVidImage
+                                }></img> 
                             <input
                                 className="upload__file-input"
                                 type="file"
