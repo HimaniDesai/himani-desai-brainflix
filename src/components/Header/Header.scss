@@ -105,7 +105,7 @@ a{
         @include labels-buttons-mobile;
         height: 2.5rem;
         line-height: 2.25rem;
-        width: 100%;
+        width: calc(100%);
         background-color: $brainflix-blue;
         border: 0px;
         border-radius: .25rem;

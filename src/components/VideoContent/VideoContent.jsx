@@ -2,7 +2,7 @@ import './VideoContent.scss';
 import likesIcon from '../../assets/icons/likes.svg';
 import viewsIcon from '../../assets/icons/views.svg';
 
-function VideoDetails({currentVideo}) {
+function VideoDetails({currentVideo, handleOnClickLike}) {
   const date = new Date(currentVideo.timestamp).toLocaleDateString();
     return (
         <div className='video-text'>
@@ -21,7 +21,7 @@ function VideoDetails({currentVideo}) {
             </div> 
             <div className='video-info-right-likes'>
               <img src={likesIcon} alt="likes-svg" className='video-info-right-likes__img'/>
-              <p className='video-info-right-likes__likecount'>{currentVideo.likes}</p>
+              <button onClick={handleOnClickLike} className='video-info-right-likes__likecount'>{currentVideo.likes}</button>
             </div>
           </div> 
         </div>

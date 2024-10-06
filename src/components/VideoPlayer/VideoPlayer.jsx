@@ -9,7 +9,7 @@ function VideoPlayer({videoPoster}){
             <div className='player-wrapper'>
                 <div className='player-wrapper__player-background'>
                     <video className="player-wrapper__player" controls poster={videoPoster}>
-                        {/* <source src={getVideofile(video.video)} type="video/mp4"></source> */}
+                        <source src={getVideofile} type="video/mp4"></source>
                     </video>
                 </div>
             </div>

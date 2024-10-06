@@ -8,7 +8,7 @@ import VideoContent from '../../components/VideoContent/VideoContent'
 import NextVideos from '../../components/NextVideos/NextVideos'
 import BrainFlixAPI from '../../BrainflixApi'
 
-const {getVideo, getList, postComment, deleteComment} = BrainFlixAPI
+const {getVideo, getList, postComment, deleteComment, likeComment} = BrainFlixAPI
 
 function Home () {
   //STATE FOR THE CURRENT VIDEO
@@ -93,12 +93,19 @@ function Home () {
       });
   };
 
+  //LIKE FUNCTION
+  const handleOnClickLike = function () {
+    axios.put(likeComment(currentVideo.id)).then((response) => {
+      getAndUpdateCurrentVideo();
+    });
+  };
+
   return (
     <>
     {currentVideo && <VideoPlayer videoPoster={currentVideo.image} />}
     <div className='desktop-bottom'>
       <div className='desktop-bottom-left'>
-        {currentVideo &&<VideoContent currentVideo={currentVideo}/>}
+        {currentVideo &&<VideoContent handleOnClickLike={handleOnClickLike} currentVideo={currentVideo}/>}
         {currentVideo &&<NewComment 
                   handleOnSubmitComment={handleOnSubmitComment}
                   handleOnClickDelete={handleOnClickDelete}
