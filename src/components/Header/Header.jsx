@@ -23,7 +23,7 @@ function Header() {
               <Link to={'/upload'}><button  className='search-section__button-tablet'>UPLOAD</button></Link>
               <img className="search-section-wrapper__user" src={profilePic}></img>
             </div>
-            <button className="search-section__button">UPLOAD</button>
+            <Link to={'/upload'}><button className="search-section__button">UPLOAD</button></Link>
           </div> 
         </header>
       </>
