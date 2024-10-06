@@ -36,32 +36,32 @@ function Upload() {
     //FUNCTION TESTING IF INPUT VALUES ARE VALID OR NOT
     const isTitleValid = function () {
         if (title && [...title].length > 10) {
-        return true;
+            return true;
         }
         return false;
     };
 
     const isDescriptValid = function () {
         if (descript && [...descript].length > 10) {
-        return true;
+            return true;
         }
         return false;
     };
 
     const isFileValid = function () {
         if (file) {
-        return true;
+            return true;
         }
         return false;
     };
 
     const isFormValid = function () {
         if (!isTitleValid()) {
-        return false;
+            return false;
         } else if (!isDescriptValid()) {
-        return false;
+            return false;
         } else if (!isFileValid()) {
-        return false;
+            return false;
         }
         return true;
     };
@@ -76,22 +76,23 @@ function Upload() {
             "Make sure to insert the uploaded file and at least 10 letters for each input box!"
         );
         } else {
-        const formData = new FormData();
-        // formData.append("image", "SomeURL");
-        formData.append("description", descript);
-        formData.append("title", title);
-        console.log(formData)
-        axios
-            .post(postForm, formData, {
-                headers: { "Content-Type": "multipart/form-data" },
-              }
-            )
-            .then((response) => {
-            alert("Successfully Submitted form");
-            navigate("/");
-            })
-            .catch((error) => {
-            console.log(error);
+            const videoPost = {
+                title: title,
+                description: descript,
+                image: file.name
+            };
+            axios
+                .post(postForm, videoPost, {
+                    headers: { "Content-Type": "application/json" },
+                }
+                )
+                .then((response) => {
+
+                    alert("Successfully Submitted form");
+                    navigate("/");
+                })
+                .catch((error) => {
+                    console.log(error);
             });
         }
           
@@ -99,7 +100,13 @@ function Upload() {
     return (
         <>
         <div className='upload'>
-            <form onSubmit={handleOnClickPublish} >
+            <form onSubmit= {(event) => {
+                                        handleOnClickPublish(event);
+                                        setTitle('');
+                                        setDescript('');
+                                        setFile(null);
+                                        setPreviewFile(null);
+                                    }} >
                 <div className='upload-wrapper'>
                     <div className='upload__heading'>Upload Video</div>
                     <div className='desktop-wrapper'>
