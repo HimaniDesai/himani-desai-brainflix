@@ -3,11 +3,12 @@
 @use '../../../src/styles/partials/variables' as *;
 
 .next-videos {
+    width: calc(100% );
     padding: 0 1rem 1rem 1rem;
     
     @include tablet {
         padding: 0 2rem 2rem 2rem;
-        
+        width: calc(100% - 32px);
     }
 
     @include desktop {

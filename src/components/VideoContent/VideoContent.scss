@@ -11,6 +11,7 @@
 
     @include tablet {
         padding: 1rem 2rem 0rem 2rem;
+        width: calc(100% - 32px);
         @include body-copy-desktop;
     }
 
